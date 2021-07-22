@@ -13,7 +13,7 @@ export default function Layout() {
       <div className="h-10 row-start-1 col-start-2 col-end-5 bg-yellow-600">
         <Navbar />
       </div>
-      <div className="h-full px-20 py-16 row-start-1 row-end-4 col-start-1 col-end-5 ">
+      <div className="h-full pl-20 py-16 row-start-1 row-end-4 col-start-1 col-end-5 ">
         <Switch>
           <Routes />
         </Switch>

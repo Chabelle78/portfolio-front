@@ -12,8 +12,6 @@ export default function Projects() {
     error: companiesError,
   } = useQuery("companies", () => project.getAll());
 
-  console.log(companiesData);
-
   const {
     isLoading: jobIdIsLoading,
     data: jobIdData,

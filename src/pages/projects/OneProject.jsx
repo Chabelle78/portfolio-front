@@ -6,17 +6,16 @@ import Spinner from "../../spinner/Spinner";
 
 export default function OneProject() {
   const { id } = useParams();
-  const { isLoading, data, error } = useQuery(["project", id], (id) =>
+  const { isLoading, data, error } = useQuery(["project", id], () =>
     project.getOne(id)
   );
 
+  console.log(id);
   console.log(data);
 
   return (
     <>
-      {data?.map((data) => {
-        return <h1>{data.name} </h1>;
-      })}
+      <p>One projects</p>
     </>
   );
 }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <div>
-      <ul className="h-10 flex flex-row justify-evenly items-center align-center pr-9">
+      <ul className="h-10 flex flex-row justify-evenly items-center align-center pr-9 text-lg">
         <Link to="/">
           <li>Home</li>
         </Link>
