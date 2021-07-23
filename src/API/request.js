@@ -44,4 +44,7 @@ export const stack = {
   getAll: () => axios.get(`${API_URL}/stacks`).then((res) => res.data),
 
   getOne: (id) => axios.get(`${API_URL}/stacks/${id}`).then((res) => res.data),
+
+  getPictures: (id) =>
+    axios.get(`${API_URL}/stacks/${id}/pictures`).then((res) => res.data),
 };

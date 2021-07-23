@@ -1,16 +1,12 @@
 import React from "react";
+import Form from "./Form";
 
 export default function Contact() {
   return (
-    <div>
-      <h1>Do you want more details ?</h1>
+    <div className="">
+      <h1 className="text-3xl mb-12">Do you want more details ?</h1>
       <p>Please send me a request</p>
-
-      <form action="">
-        <label htmlFor="Name">
-          <input type="text" placeholder="Name" id="Name" />
-        </label>
-      </form>
+      <Form />
     </div>
   );
 }

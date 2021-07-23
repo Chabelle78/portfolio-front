@@ -13,26 +13,27 @@ export default function Project({ id, name, github }) {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <div
-      key={id}
-      className="border border-red-500  mt-5 pb-2 flex flex-col justify-between items-center"
-    >
-      <Link to={`/project/${id}`}>
-        <p className="text-2xl">{name}</p>
-      </Link>
-      {data?.map((data) => {
-        return <p>{data.name}</p>;
-      })}
-      <>
-        <a href={github} target="_blank">
-          <img
-            src="src/pictures/github (1).svg"
-            alt="github_link"
-            width="25rem"
-            className=""
-          />
-        </a>
-      </>
+    <div key={id} className="border border-coral-default h-40 group mx-4 my-2">
+      <div className="bg-red-700 bg-opacity-20 h-full group-hover:bg-opacity-60 flex flex-col">
+        <Link to={`/project/${id}`}>
+          <p className="text-2xl">{name}</p>
+        </Link>
+        <div className="flex flex-col justify-between">
+          {data.map((data) => {
+            return <p key={data.id}>{data.name}</p>;
+          })}
+        </div>
+        <div className="flex items-center">
+          <a href={github} target="_blank" key={id}>
+            <img
+              src="src/pictures/github (1).svg"
+              alt="github_link"
+              width="25rem"
+              className=""
+            />
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
