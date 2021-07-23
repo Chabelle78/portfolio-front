@@ -1,6 +1,5 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
 import { project, stack } from "../../API/request";
 import Spinner from "../../spinner/Spinner";
 import Project from "./Project";

@@ -10,9 +10,6 @@ export default function OneProject() {
     project.getOne(id)
   );
 
-  console.log(id);
-  console.log(data);
-
   return (
     <>
       <p>One projects</p>

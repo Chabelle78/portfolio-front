@@ -1,13 +1,10 @@
 import React from "react";
-import { useQuery } from "react-query";
-import { project } from "../API/request";
-import Spinner from "../spinner/Spinner";
 
 export default function Home() {
   return (
     <div className="flex flex-row mx-10 my-10">
       <div className="mx-10">
-        <h1 className="text-3xl mb-12">Welcome, I am LPB</h1>
+        <h1 className="text-3xl mb-12 font-stix">Welcome, I am LPB</h1>
         <div className="flex flex-col ml-12 justify-around">
           <p className="mb-5">
             I'm Estelle, a student developer 👨‍💻 working specially on JavaScript
@@ -20,6 +17,14 @@ export default function Home() {
             ❓ Ask me about anything related to my personality ! ⚡ Fun fact: I
             love sports !
           </p>
+        </div>
+        <div className="flex justify-evenly">
+          <button className="bg-red-400 hover:bg-red-300 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded">
+            Stacks Used
+          </button>
+          <button className="bg-red-400 hover:bg-red-300 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded">
+            Know me better
+          </button>
         </div>
       </div>
       <img

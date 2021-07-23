@@ -9,7 +9,6 @@ export default function Project({ id, name, github }) {
     project.getStacks(id)
   );
 
-  console.log(data);
   if (isLoading) return <Spinner />;
   if (error) return <p>{error.message}</p>;
 
