@@ -6,7 +6,6 @@ import PictureStacks from "./PicturesStacks";
 
 export default function Stacks() {
   const { isLoading, data, error } = useQuery("jobs", () => stack.getAll());
-  console.log(data);
 
   if (isLoading) return <Spinner />;
 
@@ -14,17 +13,13 @@ export default function Stacks() {
 
   return (
     <div>
-      <h1 className="text-3xl mb-12">Stack </h1>
-
-      <div className="">
-        {data?.map((data) => {
-          return (
-            <div key={data.id}>
-              <PictureStacks key={data.id} {...data} />
-            </div>
-          );
-        })}
-      </div>
+      {data?.map((data) => {
+        return (
+          <div key={data.id}>
+            <PictureStacks key={data.id} {...data} />
+          </div>
+        );
+      })}
     </div>
   );
 }

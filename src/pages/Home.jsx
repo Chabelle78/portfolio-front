@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
-import im1 from "./../pictures/";
 
 export default function Home() {
-  const images = {
-    im1: require("./../pictures/im1.jpg").default,
-  };
-  const randomImages = images[Math.floor(Math.random() * images.length)];
-  console.log(randomImages);
+  const images = [
+    "src/pictures/im1.jpg",
+    "src/pictures/im2.jpg",
+    "src/pictures/im3.jpg",
+    "src/pictures/im4.jpg",
+    "src/pictures/im5.jpg",
+    "src/pictures/im6.jpg",
+    "src/pictures/im7.jpg",
+    "src/pictures/LOGOLPB.png",
+  ];
+
+  const [showImages, setShowImages] = useState("src/pictures/LOGOLPB.png");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const randomImages = images[Math.floor(Math.random() * images.length)];
+      setShowImages(randomImages);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="flex flex-row mx-10 my-10">
-      <div className="mx-10">
+    <div className="flex mx-10 my-10 py-10">
+      <div className="mx-10 w-2/3 ">
         <div className="typewriter">
           <h1 className="text-3xl mb-12 ">Welcome, I am Estelle a.k.a LPB</h1>
         </div>
@@ -42,11 +56,9 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <img
-        src="src/pictures/Capture d’écran 2021-07-21 à 15.45.57.png"
-        alt="LPB_img"
-        width=""
-      />
+      <div className="w-1/3 flex items-center self-center">
+        <img src={showImages} alt="imgslpb" className="" />
+      </div>
     </div>
   );
 }

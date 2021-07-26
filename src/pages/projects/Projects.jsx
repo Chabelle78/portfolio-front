@@ -24,20 +24,10 @@ export default function Projects() {
 
   return (
     <div>
-      <h1 className="text-3xl mb-12">My projects</h1>
-      <div className="grid grid-cols-3 grid-rows-3">
+      <h1 className="text-3xl mb-12 pt-20">My projects</h1>
+      <div className="flex flex-wrap justify-center">
         {companiesData?.map((data) => {
           return <Project {...data} key={data.id} />;
-        })}
-      </div>
-      <h1>Stack </h1>
-      <div className="grid grid-cols-3 grid-rows-3">
-        {jobIdData?.map((job) => {
-          return (
-            <div key={job.id}>
-              <p>{job.name} </p>
-            </div>
-          );
         })}
       </div>
     </div>

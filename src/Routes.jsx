@@ -5,7 +5,7 @@ import Contact from "./pages/contact/Contact";
 import Home from "./pages/Home";
 import OneProject from "./pages/projects/OneProject";
 import Projects from "./pages/projects/Projects";
-import Stacks from "./pages/stacks/Stacks";
+import StacksComponent from "./pages/stacks/StacksComponents";
 
 export default function Routes() {
   return (
@@ -15,7 +15,7 @@ export default function Routes() {
       <Route exact path="/projects" component={Projects} />
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
-      <Route exact path="/stacks" component={Stacks} />
+      <Route exact path="/stacks" component={StacksComponent} />
     </div>
   );
 }

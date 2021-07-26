@@ -8,18 +8,16 @@ export default function PictureStacks({ id, name }) {
     stack.getPictures(id)
   );
 
-  console.log(data);
   if (isLoading) return <Spinner />;
 
   if (error) return <p>{error.message}</p>;
 
   return (
-    <div>
-      {/* <p>{name}</p> */}
+    <div className="w-10 h-10">
       {data?.map((data) => {
         return (
           <>
-            <img src={data.url} key={data.id} className="w-20" />
+            <img src={data.url} key={data.id} />
           </>
         );
       })}
