@@ -1,26 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Spinner from "../spinner/Spinner";
-import PictureStacks from "./stacks/PicturesStacks";
+import "./home.css";
+import im1 from "./../pictures/";
 
 export default function Home() {
+  const images = {
+    im1: require("./../pictures/im1.jpg").default,
+  };
+  const randomImages = images[Math.floor(Math.random() * images.length)];
+  console.log(randomImages);
+
   return (
     <div className="flex flex-row mx-10 my-10">
       <div className="mx-10">
-        <h1 className="text-3xl mb-12">Welcome, I am LPB</h1>
-        <div className="flex flex-col ml-12 justify-around">
+        <div className="typewriter">
+          <h1 className="text-3xl mb-12 ">Welcome, I am Estelle a.k.a LPB</h1>
+        </div>
+        <div className="flex flex-col ml-12 justify-around my-12 text-lg">
           <p className="mb-5">
-            I'm Estelle, a student developer 👨‍💻 working specially on JavaScript
-            🚀{" "}
+            🙆 I'm Estelle Chabat, web developer 👨‍💻 working specially on
+            JavaScript 🚀
           </p>
           <p className="mb-5">
-            🌱 I’m currently learning on React, Tailwind CSS, Node.js
+            🌱 I’m currently learning on ReactJS, TailwindCSS, Node.js an so on
+            other many things!
           </p>
+          <p className="mb-5">💻 Learning new things is my passion !</p>
           <p className="mb-5">
-            ❓ Ask me about anything related to my personality ! ⚡ Fun fact: I
-            love sports !
+            ❓ Ask me about anything related to my personality !
           </p>
-          <PictureStacks />
+          <p>🏄‍♀️ Fun fact: I love sports !</p>
         </div>
         <div className="flex justify-evenly">
           <Link to="/stacks">

@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         nunito: ["nunito", "sans-serif"],
         stix: ["STIX Two Math", "serif"],
+        noto: ["Noto Sans TC", "sans-serif"],
       },
       backgroundImage: {
         bgImg: "url('src/pictures/bg-portfolio.webp')",

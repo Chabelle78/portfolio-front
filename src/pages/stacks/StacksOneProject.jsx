@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { project } from "../../API/request";
 import Spinner from "../../spinner/Spinner";
+import PictureStacks from "./PicturesStacks";
 
 export default function StacksOneProject({ id, name, github }) {
   const { isLoading, data, error } = useQuery(["project", id], () =>

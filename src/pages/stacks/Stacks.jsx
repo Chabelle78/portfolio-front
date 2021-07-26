@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { stack } from "../../API/request";
 import Spinner from "../../spinner/Spinner";
+import PictureStacks from "./PicturesStacks";
 
 export default function Stacks() {
   const { isLoading, data, error } = useQuery("jobs", () => stack.getAll());
@@ -15,11 +16,11 @@ export default function Stacks() {
     <div>
       <h1 className="text-3xl mb-12">Stack </h1>
 
-      <div className="grid grid-cols-3 grid-rows-3 ">
-        {data?.map((job) => {
+      <div className="">
+        {data?.map((data) => {
           return (
-            <div key={job.id}>
-              <p>{job.name} </p>
+            <div key={data.id}>
+              <PictureStacks key={data.id} {...data} />
             </div>
           );
         })}
