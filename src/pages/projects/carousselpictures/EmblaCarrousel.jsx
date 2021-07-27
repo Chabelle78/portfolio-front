@@ -6,16 +6,15 @@ import { useParams } from "react-router";
 import { useQuery } from "react-query";
 import { project } from "../../../API/request";
 
-const SLIDE_COUNT = 6;
-const slides = Array.from(Array(SLIDE_COUNT).keys());
-
 const EmblaCarousel = () => {
   const { id } = useParams();
   const { isLoading, data, error } = useQuery(["pictures", id], () =>
     project.getPictures(id)
   );
-
   console.log(data);
+
+  // const SLIDE_COUNT = data.length;
+  // const slides = Array.from(Array(data).keys());
 
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
@@ -49,18 +48,15 @@ const EmblaCarousel = () => {
       <div className="embla">
         <div className="embla__viewport" ref={viewportRef}>
           <div className="embla__container">
-            {slides.map((index) => (
-              <div className="embla__slide" key={index.id}>
+            {data?.map((data) => (
+              <div className="embla__slide" key={data.id}>
                 <div className="embla__slide__inner">
-                  {data.map((data) => {
-                    return (
-                      <img
-                        className="embla__slide__img"
-                        src={data.url}
-                        alt="A cool cat."
-                      />
-                    );
-                  })}
+                  <img
+                    className="embla__slide__img"
+                    src={data.url}
+                    alt="project-pictures"
+                  />
+                  );
                 </div>
               </div>
             ))}
