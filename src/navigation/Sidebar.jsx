@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Sidebar() {
   return (
-    <div className="fixed h-full flex">
+    <div className="fixed h-full flex ">
       <ul className="flex flex-col justify-evenly items-center align-center pl-10">
         <li className="pr-12  hover:bg-mainBg hover:bg-whiteGray hover:shadow-buttonShadow transform hover:scale-110">
           <a href="https://github.com/Chabelle78" target="_blank">

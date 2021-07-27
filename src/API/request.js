@@ -38,6 +38,8 @@ export const project = {
     axios.get(`${API_URL}/projects/${id}`).then((res) => res.data),
   getStacks: (id) =>
     axios.get(`${API_URL}/projects/${id}/stacks`).then((res) => res.data),
+  getPictures: (id) =>
+    axios.get(`${API_URL}/projects/${id}/pictures`).then((res) => res.data),
 };
 
 export const stack = {

@@ -47,11 +47,11 @@ export default function Home() {
         </div>
         <div className="flex justify-evenly">
           <Link to="/stacks">
-            <button className="bg-red-400 hover:bg-red-300 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded">
+            <button className="bg-red-400 animate-pulse hover:bg-red-300 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded">
               Stacks Used
             </button>
           </Link>
-          <button className="bg-red-400 hover:bg-red-300 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded">
+          <button className="bg-red-400 animate-pulse hover:bg-red-300 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded">
             Know me better
           </button>
         </div>
