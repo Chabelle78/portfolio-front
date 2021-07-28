@@ -3,9 +3,11 @@ import { useQuery } from "react-query";
 import { stack } from "../../API/request";
 import Spinner from "../../spinner/Spinner";
 
-export default function PictureStacks({ id, name }) {
-  const { isLoading, data, error } = useQuery(["pictures", id], () =>
-    stack.getPictures(id)
+export default function PictureStacks({ id }) {
+  const { isLoading, data, error } = useQuery(
+    ["pictures", id],
+    () => stack.getPictures(id),
+    { enabled: Boolean(id) }
   );
 
   if (isLoading) return <Spinner />;
@@ -13,12 +15,12 @@ export default function PictureStacks({ id, name }) {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <div className="w-10 h-10">
+    <div>
       {data?.map((data) => {
         return (
-          <>
-            <img src={data.url} key={data.id} />
-          </>
+          <div key={data.id} className="">
+            <img src={data.url} className="w-10 h-10" />
+          </div>
         );
       })}
     </div>

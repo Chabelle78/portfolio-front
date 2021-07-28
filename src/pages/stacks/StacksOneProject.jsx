@@ -22,7 +22,7 @@ export default function StacksOneProject({ id, name, github }) {
         <p className="text-2xl">{name}</p>
       </Link>
       {data?.map((data) => {
-        return <p>{data.name}</p>;
+        return <div>{data.name}</div>;
       })}
       <>
         <a href={github} target="_blank">

@@ -6,15 +6,9 @@ import { useParams } from "react-router";
 import { useQuery } from "react-query";
 import { project } from "../../../API/request";
 
-const EmblaCarousel = () => {
-  const { id } = useParams();
-  const { isLoading, data, error } = useQuery(["pictures", id], () =>
-    project.getPictures(id)
-  );
-  console.log(data);
-
-  // const SLIDE_COUNT = data.length;
-  // const slides = Array.from(Array(data).keys());
+const EmblaCarousel = ({ id }) => {
+  // const SLIDE_COUNT = 6;
+  // const slides = Array.from(Array(data.length).keys());
 
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
@@ -43,6 +37,14 @@ const EmblaCarousel = () => {
     embla.on("select", onSelect);
   }, [embla, setScrollSnaps, onSelect]);
 
+  const { isLoading, data, error } = useQuery(
+    ["pictures", { projectId: id }],
+    () => project.getPictures(id),
+    { enabled: Boolean(id) }
+  );
+  console.log(id);
+  console.log(data);
+  if (isLoading) return <p>Loading</p>;
   return (
     <>
       <div className="embla">

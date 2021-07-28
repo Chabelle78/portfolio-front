@@ -6,27 +6,27 @@ import Project from "./Project";
 
 export default function Projects() {
   const {
-    isLoading: companiesIsLoading,
-    data: companiesData,
-    error: companiesError,
-  } = useQuery("companies", () => project.getAll());
+    isLoading: projectsIsLoading,
+    data: projectsDatas,
+    error: projectError,
+  } = useQuery("projects", () => project.getAll());
 
   const {
-    isLoading: jobIdIsLoading,
-    data: jobIdData,
-    error: jobIdError,
-  } = useQuery("jobs", () => stack.getAll());
+    isLoading: stacksIdIsLoading,
+    data: stacksIdData,
+    error: stacksIdError,
+  } = useQuery("stackss", () => stack.getAll());
 
-  if (companiesIsLoading || jobIdIsLoading) return <Spinner />;
+  if (projectsIsLoading || stacksIdIsLoading) return <Spinner />;
 
-  const error = companiesError || jobIdError;
+  const error = projectError || stacksIdError;
   if (error) return <p>{error.message}</p>;
 
   return (
     <div>
       <h1 className="text-3xl mb-12 pt-20">My projects</h1>
-      <div className="flex flex-wrap justify-center">
-        {companiesData?.map((data) => {
+      <div className="flex flex-wrap justify-around">
+        {projectsDatas?.map((data) => {
           return <Project {...data} key={data.id} />;
         })}
       </div>
